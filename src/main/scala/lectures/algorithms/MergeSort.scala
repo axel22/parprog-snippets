@@ -93,7 +93,7 @@ object MergeSort {
       if (depth == maxDepth) {
         Array.copy(src, from, target, from, until - from)
       } else {
-        val mid = (from + until) / 2
+        val mid = from + ((until - from) / 2)
         val right = task {
           copy(src, target, mid, until, depth + 1)
         }
