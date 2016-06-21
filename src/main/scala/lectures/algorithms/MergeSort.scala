@@ -55,7 +55,7 @@ object MergeSort {
         i += 1
         left += 1
       }
-      while (right < mid) {
+      while (right < until) {
         dst(i) = src(right)
         i += 1
         right += 1
