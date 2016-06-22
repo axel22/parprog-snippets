@@ -17,5 +17,7 @@ parallelExecution in Test := false
 libraryDependencies ++= Seq(
   "com.storm-enroute" %% "scalameter-core" % "0.6",
   "org.scala-lang.modules" %% "scala-swing" % "1.0.1",
-  "com.github.scala-blitz" %% "scala-blitz" % "1.1"
+  "com.github.scala-blitz" %% "scala-blitz" % "1.1",
+  "org.scalactic" %% "scalactic" % "2.2.6",
+  "org.scalatest" %% "scalatest" % "2.2.6" % "test"
 )
