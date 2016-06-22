@@ -30,7 +30,7 @@ object MergeSort {
     // - doing so would immensely complicate the algorithm
     val ys = new Array[Int](xs.length)
     dummy = ys
-    
+
     // 2) Sort the elements.
     // The merge step has to do some copying, and is the main performance bottleneck of the algorithm.
     // This is due to the final merge call, which is a completely sequential pass.
@@ -101,7 +101,9 @@ object MergeSort {
         right.join()
       }
     }
-    copy(ys, xs, 0, xs.length, 0)
+    if (maxDepth % 2 != 0) {
+      copy(ys, xs, 0, xs.length, 0)
+    }
   }
 
   val standardConfig = config(
