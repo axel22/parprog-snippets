@@ -5,17 +5,9 @@ import org.scalameter._
 import common._
 
 object MergeSort {
-  // a bit of reflection to access the private sort1 method, which takes an offset and an argument
-  private val sort1 = {
-    val method = scala.util.Sorting.getClass.getDeclaredMethod("sort1", classOf[Array[Int]], classOf[Int], classOf[Int])
-    method.setAccessible(true)
-    (xs: Array[Int], offset: Int, len: Int) => {
-      method.invoke(scala.util.Sorting, xs, offset.asInstanceOf[AnyRef], len.asInstanceOf[AnyRef])
-    }
-  }
 
   def quickSort(xs: Array[Int], offset: Int, length: Int): Unit = {
-    sort1(xs, offset, length)
+    java.util.Arrays.sort(xs, offset, offset + length)
   }
 
   @volatile var dummy: AnyRef = null
